@@ -1,9 +1,9 @@
 from app.domain.entities.usuario import Usuario
-from app.infrastructure.repositories.usuario_repository import UsuarioRepository
+from app.infrastructure.repositories.usuario_repository import UsuarioRepositoryBase
 from typing import List
 
 class UsuarioService:
-    def __init__(self, repo: UsuarioRepository):
+    def __init__(self, repo: UsuarioRepositoryBase):
         self.repo = repo
 
     def crear_usuario(self, id: int, nombre: str, email: str) -> Usuario:
